@@ -1,0 +1,30 @@
+Lets create a Virtual Environment
+
+1. Install the virtualenv library
+    py -m pip install virtualenv
+        "python modules 'Pip Installs Packages' install library_name"
+
+2. Use the library
+    cd to folder you want to use
+    py -m venv venv
+        "python modules module_name environment_name"
+
+** NOTE: Step 3 must be done every time that you work on the project.  Ensure that (environment_name) is displayed at the head of the Terminal file path, like shown below:
+    (venv) C:\Users\jim\OneDrive\code\sdgku\online-store\server>
+**
+
+3. Launch the virtual Environment
+    MAC:    source venv/bin/activate
+            "source environment_name binary_folder activate"
+    WIN:    venv\Scripts\activate
+            "environment_name Scripts_folder activate"
+
+        OR
+
+    cd to server, then drag & drop Scripts\activate file from Explorer into Terminal
+
+4. Install flask in venv
+    (venv) \online-store\server>py -m pip install flask
+
+5. Install flask in online-store
+    \online-store>py -m pip install flask
