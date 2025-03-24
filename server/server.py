@@ -19,9 +19,9 @@ def info():
     name = {"name": "James W"}
     return json.dumps(name)
 
-def fix_id(obj):
-    obj["_id"] = str(obj["_id"])
-    return obj
+# def fix_id(obj):
+#     obj["_id"] = str(obj["_id"])
+#     return obj
 
 products = []
 
@@ -58,13 +58,20 @@ def put_product(index):
 def count_products():
     return json.dumps(len(products))
 
-@app.get("/api/catalog/<category>")
+@app.get("/api/products/<category>")
 def get_category(category):
     category_products = []
     for product in products:
         if product["category"] == category:
             category_products.append(product)
     return json.dumps(category_products)
+
+@app.get("/api/reports/total")
+def get_catalog_value():
+    total = 0
+    for product in products:
+        total += product["price"]
+    return json.dumps(total)
 
 @app.get("/api/categories")
 def get_categories():
