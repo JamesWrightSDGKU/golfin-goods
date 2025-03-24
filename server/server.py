@@ -1,12 +1,14 @@
-from flask import Flask
+from flask import Flask, request
 import json
+# from config import db
 
-app = Flask(__name__) # __name__ uses the name of the root folder (two underscores on each side)
+# __name__ calls root folder (two underscores on each side)
+app = Flask(__name__) 
 
-# This is an endpoint
+# ENDPOINTS
 @app.get("/") # / is the root (index/homepage)
 def home():
-    return "Hello from Flask" # when the user requests (get) the homepage, code sends "Hello from Flask" to user
+    return "Hello from Flask." 
 
 @app.get("/about")
 def about():
@@ -17,4 +19,63 @@ def info():
     name = {"name": "James W"}
     return json.dumps(name)
 
-app.run(debug=True) # This passes the changes to the server when file is saved
+def fix_id(obj):
+    obj["_id"] = str(obj["_id"])
+    return obj
+
+products = []
+
+@app.get("/api/products")
+def get_products():
+    # products_db = []
+    # cursor = db.products.find({})
+    # for product in cursor:
+    #     print("product", product)
+    #     products_db.append(fix_id(product))
+    # return json.dumps(products_db)
+    return json.dumps(products)
+
+
+@app.post("/api/products")
+def post_product():
+    product = request.get_json()
+    products.append(product)
+    # db.products.insert_one(product)
+    print(product)
+    return "Product saved."
+
+
+@app.put("/api/products/<int:index>")
+def put_product(index):
+    updatedProduct = request.get_json()
+    if 0 <= index < len(products):
+        products[index] = updatedProduct
+        return json.dumps(updatedProduct)
+    else:
+        return "That index does not exist."
+    
+
+# Use pop() to delete an element from a list
+@app.delete("/api/products/<int:index>")
+def delete_product(index):
+    deletedProduct = request.get_json()
+    if 0 <= index < len(products):
+        deletedProduct = products.pop(index)
+        return json.dumps(deletedProduct)
+    else:
+        return "That index does not exist."
+    
+    
+# try this - but use list(index).update(object)
+@app.patch("/api/products/<int:index>")
+def patch_product(index):
+    patchedProduct = request.get_json()
+    if 0 <= index < len(products):
+        products[index].update(patchedProduct)
+        return json.dumps(patchedProduct)
+    else:
+        return "That index does not exist."
+    
+
+# Pass the changes to the server when file is saved:
+app.run(debug=True)
