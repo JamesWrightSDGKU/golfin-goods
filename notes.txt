@@ -28,3 +28,7 @@ Lets create a Virtual Environment
 
 5. Install flask in online-store
     \online-store>py -m pip install flask
+
+
+MongoDB
+un james pw password55

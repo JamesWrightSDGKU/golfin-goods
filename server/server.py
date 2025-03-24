@@ -53,7 +53,26 @@ def put_product(index):
         return json.dumps(updatedProduct)
     else:
         return "That index does not exist."
-    
+
+@app.get("/api/products/count")
+def count_products():
+    return json.dumps(len(products))
+
+@app.get("/api/catalog/<category>")
+def get_category(category):
+    category_products = []
+    for product in products:
+        if product["category"] == category:
+            category_products.append(product)
+    return json.dumps(category_products)
+
+@app.get("/api/categories")
+def get_categories():
+    categories = []
+    for product in products:
+        if product["category"] not in categories:
+            categories.append(product["category"])
+    return json.dumps(categories)
 
 # Use pop() to delete an element from a list
 @app.delete("/api/products/<int:index>")
