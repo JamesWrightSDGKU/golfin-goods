@@ -1,9 +1,11 @@
 from flask import Flask, request
 import json
-# from config import db
+from config import db
 
 # __name__ calls root folder (two underscores on each side)
-app = Flask(__name__) 
+app = Flask(__name__)
+
+products = []
 
 # ENDPOINTS
 @app.get("/") # / is the root (index/homepage)
@@ -19,28 +21,24 @@ def info():
     name = {"name": "James W"}
     return json.dumps(name)
 
-# def fix_id(obj):
-#     obj["_id"] = str(obj["_id"])
-#     return obj
-
-products = []
+def fix_id(obj):
+    obj["_id"] = str(obj["_id"])
+    return obj
 
 @app.get("/api/products")
 def get_products():
-    # products_db = []
-    # cursor = db.products.find({})
-    # for product in cursor:
-    #     print("product", product)
-    #     products_db.append(fix_id(product))
-    # return json.dumps(products_db)
-    return json.dumps(products)
+    products_db = []
+    cursor = db.products.find({})
+    for product in cursor:
+        print("product", product)
+        products_db.append(fix_id(product))
+    return json.dumps(products_db)
 
 
 @app.post("/api/products")
 def post_product():
     product = request.get_json()
-    products.append(product)
-    # db.products.insert_one(product)
+    db.products.insert_one(product)
     print(product)
     return "Product saved."
 

@@ -1,0 +1,8 @@
+.catalog h1 {
+    text-align: center;
+    color: darkcyan;
+}
+
+.list {
+    display: flex;
+}
