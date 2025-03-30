@@ -8,6 +8,7 @@ import About from './pages/About'
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Admin from './pages/Admin'
 
 function App() {
 
@@ -18,6 +19,8 @@ function App() {
         <Catalog></Catalog>
 
         <About></About>
+
+        <Admin></Admin>
         
         <Footer></Footer>
     </>
