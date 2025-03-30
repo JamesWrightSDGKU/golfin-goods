@@ -11,3 +11,32 @@
     text-align: center;
 }
 
+.product img {
+    height: 100px;
+}
+
+.product .prices {
+    display: flex;
+}
+
+.product .prices label {
+    flex: 1;
+}
+
+.product .prices .total {
+    color: tomato;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.product .prices .unit {
+    color: olive;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product .controls {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 16px;
+}
