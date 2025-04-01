@@ -53,19 +53,3 @@ function ProductAdmin() {
 }
 
 export default ProductAdmin;
-
-/**
- * 1 create the product state variable, the object should have:
- * -title
- * -price
- * -image
- * -category
- * 
- * 2 create the handleProduct function
- * 
- * 3 set onBlur and name to each input in the product form
- * 
- * 4 create the saveProduct function that console logs the object
- * 
- * 5 call the saveProduct when clicking on the save product button
- */

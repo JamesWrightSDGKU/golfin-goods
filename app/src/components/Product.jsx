@@ -1,13 +1,19 @@
 import QuantityPicker from "./QuantityPicker";
 import "../styles/Product.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import DataContext from "../state/DataContext";
 
 function Product(props) {
 
     const [quantity, setQuantity] = useState(1);
 
+    const addProdToCart = useContext(DataContext).addProdToCart;
+
     function add() {
         console.log("You have added a product.");
+        let prodForCart = {...props.data};
+        prodForCart.quantity = quantity;
+        addProdToCart(prodForCart);
     }
 
     function handleQuantity(qty) {
@@ -18,6 +24,7 @@ function Product(props) {
     return (
         <div className="product">
             <img src={props.data.image} alt={props.data.title}></img>
+
             <h5>{props.data.title}</h5>
 
             <div className="prices">
