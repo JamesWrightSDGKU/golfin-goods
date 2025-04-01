@@ -10,20 +10,27 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Admin from './pages/Admin'
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home'
+import Cart from './pages/Cart'
+
 function App() {
 
     return (
-    <>
-        <Navbar></Navbar>
+    <BrowserRouter>
+        <Navbar />
 
-        <Catalog></Catalog>
-
-        <About></About>
-
-        <Admin></Admin>
-        
-        <Footer></Footer>
-    </>
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/home' element={<Home />} />
+            <Route path='/catalog' element={<Catalog />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/admin' element={<Admin />} />
+        </Routes>
+                
+        <Footer />
+    </BrowserRouter>
     )
 }
 

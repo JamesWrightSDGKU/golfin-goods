@@ -1,0 +1,31 @@
+.home {
+    padding: 1rem;
+}
+.home .home-text {
+    text-align: center;
+}
+.home h1 {
+    color: darkcyan;
+}
+
+.home .relative {
+    position: relative;
+}
+
+.home .over-img {
+    position: absolute;
+    background-color: #ffffff7b;
+    border-radius: 6px;
+    width: 500px;
+    padding: 30px 20px;
+    top: 450px;
+    left: 550px;
+}
+
+@media(max-width:767px) {
+    /* Rules for mobile */
+    .home .over-img {
+        top: 250px;
+        left: 150px;
+    }
+}

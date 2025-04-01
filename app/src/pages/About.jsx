@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/About.css";
+import avatar from "../assets/golfer.png";
 
 function About() {
     const [isVisible, setIsVisible] = useState(false);
@@ -10,9 +11,14 @@ function About() {
     }
 
     return (
-        <div className="about">
+        <div className="about page">
+
+            {}
+            <img className="avatar" src={avatar} alt="about me"></img>
+
             <h2>James</h2>
             { isVisible ? <h5>james@example.com</h5> : null }
+
             <button className="btn btn-dark" onClick={showData}>Contact Me</button>
         </div>
     );

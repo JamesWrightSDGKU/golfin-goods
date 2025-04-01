@@ -1,6 +1,7 @@
 .navbar {
     display: flex;
     align-items: center;
+    padding-left: 12px !important;
 }
 
 .navbar ul {
@@ -15,6 +16,11 @@
     margin: 0 10px;
 }
 
+.navbar ul li a {
+    text-decoration: none;
+    color: #394e5f;
+}
+
 .navbar ul li:hover {
     color: tomato;
     font-weight: 600;
@@ -24,4 +30,12 @@
 .navbar .title {
     font-size: 20px;
     font-weight: bold;
+}
+
+.navbar .cart-container {
+    margin-left: auto;
+}
+
+.navbar .cart-container li {
+    margin-right: 12px;
 }
