@@ -13,3 +13,10 @@
 .discounts .form-field label {
     display: block;
 }
+
+.discounts .coupon-list {
+    margin-top: 12px;
+    list-style: none;
+    text-align: left;
+    
+}

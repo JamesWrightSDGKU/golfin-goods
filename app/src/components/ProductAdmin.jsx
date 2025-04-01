@@ -10,7 +10,7 @@ function ProductAdmin() {
         category:""
     });
 
-    function saveProduct() {
+    function save() {
         console.log(product);
     }
 
@@ -46,7 +46,7 @@ function ProductAdmin() {
                 <input className="form-control" type="text" name="category" onBlur={handleProduct}/>
             </div>
 
-            <button className="btn btn-sm btn-primary" onClick={saveProduct}>Save</button>
+            <button className="btn btn-sm btn-primary" onClick={save}>Save</button>
             
         </div>
     );
