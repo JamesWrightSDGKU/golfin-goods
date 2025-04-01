@@ -34,6 +34,8 @@
 
 .navbar .cart-container {
     margin-left: auto;
+    width: auto;
+    display: flex;
 }
 
 .navbar .cart-container li {

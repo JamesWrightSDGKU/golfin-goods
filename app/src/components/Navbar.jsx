@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css"
+import { useContext } from "react";
 
 function Navbar() {
+
     return (
         <div className="navbar">
             <span className="title">Golfin Goods</span>
@@ -20,9 +22,13 @@ function Navbar() {
                 </li>
                 <li className="cart-container">
                     <Link to="/cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
+                        <i className="fa-solid fa-cart-shopping"></i>
                         Cart
                     </Link>
+
+                    <button className="btn btn-outline-dark">
+                        <i className="fa-regular fa-circle-user"></i>
+                    </button>
                 </li>
             </ul>
         </div>
