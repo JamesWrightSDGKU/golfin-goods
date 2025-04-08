@@ -11,8 +11,7 @@ function Navbar() {
     function getNumOfProds() {
         // sumn the quantities of all the products
         let sum = 0;
-        for(let i=0; i<cart.length; i++) {
-            const prod = cart[i];
+        for(const prod of cart) {
             sum += prod.quantity;
         }
         
@@ -21,10 +20,10 @@ function Navbar() {
 
     return (
         <div className="navbar">
-            <span className="title">Golfin Goods</span>
+            <span className="title logo">Golfin Goods</span>
             <ul>
                 <li>
-                    <Link to="/home"></Link>Home
+                    <Link to="/home">Home</Link>
                 </li>
                 <li>
                     <Link to="/catalog">Catalog</Link>

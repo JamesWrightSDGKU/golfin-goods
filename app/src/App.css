@@ -1,5 +1,21 @@
+:root {
+    /* Light Color Palette */
+    --light-background: #cbe2eb;
+    --light-primary: #82b8d7;
+    --light-secondary: #2687b9;
+    --light-accent: #757e1c;
+    --light-text: #3b565f;
+
+    /* Dark Color Palette */
+    --dark-background: #203235;
+    --dark-primary: #3b565f;
+    --dark-secondary: #799cb0;
+    --dark-accent: #545d14;
+    --dark-text: #cbe2eb;
+}
+
 #root {
-    margin: 0 auto;
+    margin: 0;
     text-align: center;
 }
 

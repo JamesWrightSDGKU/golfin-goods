@@ -3,7 +3,7 @@ import { useState } from "react";
 
 function GlobalProvider(props) {
     const [cart, setCart] = useState([]);
-    const [user, setUser] = useState({ id: 1531, name:"James", email:"James@example.com"});
+    const [user, setUser] = useState({ id: 1531, name:"userJames", email:"james@example.com"});
 
     function addProdToCart(item) {
         let copy = [...cart];
@@ -12,11 +12,13 @@ function GlobalProvider(props) {
     }
 
     function removeProdFromCart() {
-
+        let copy = [...cart];
+        copy.splice(copy.indexOf(item), 1);
+        setCart(copy);
     }
 
     function clearCart() {
-
+        setCart([]);
     }
 
     return (

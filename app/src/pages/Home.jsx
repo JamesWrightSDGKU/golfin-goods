@@ -8,24 +8,22 @@ function Home() {
             
             <div className="home-text">
                 <h1>Golfin Goods</h1>
-                <h3>Your trusted source for golf products</h3>
+                <h2>Your trusted source for golf products</h2>
             </div>
 
             <div className="home-text">
                 <div className="info">
-                    <h3>Quality products, fairway prices</h3>
-                    <p>Browse out catalog to find the latest golfing products to improve your game.</p>
                     <hr />
+                    <h3>See what we have to offer!</h3>
                     <Link className="btn btn-lg btn-success" to="/catalog">
-                        Check our amazing catalog
+                        Browse catalog
                     </Link>
+                    <p>In our catalog, you'll find quality products at fairway prices.</p>
                 </div>
                 <img src="/images/golf-instructor.jpg" alt=""></img>
             </div>
 
-            <div className="relative">
-                <img src={banner} alt="" className="main-img" />
-            </div>
+            
         </div>
     );
 }

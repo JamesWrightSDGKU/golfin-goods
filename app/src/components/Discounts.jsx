@@ -8,14 +8,6 @@ function Discounts() {
         discount:""
     });
 
-    function save() {
-        console.log(coupon);
-
-        let copy = [...allCoupons];
-        copy.push(coupon);
-        setAllCoupons(copy);
-    }
-
     function handleCoupon(e) {
         const text = e.target.value;
         const name = e.target.name;
@@ -23,7 +15,15 @@ function Discounts() {
         copy[name] = text;
         setCoupon(copy);
     }
+    
+    function save() {
+        console.log(coupon);
 
+        let copy = [...allCoupons];
+        copy.push(coupon);
+        setAllCoupons(copy);
+    }
+    
     return (
         <div className="discounts">
             <h3>Discount codes</h3>

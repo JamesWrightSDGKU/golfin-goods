@@ -1,5 +1,5 @@
-import { useState } from "react";
 import "../styles/About.css";
+import { useState } from "react";
 import avatar from "../assets/golfer.png";
 
 function About() {
@@ -14,7 +14,7 @@ function About() {
         <div className="about page">
 
             {}
-            <img className="avatar" src={avatar} alt="about me"></img>
+            <img className="avatar" src={avatar} alt="about me" />
 
             <h2>James</h2>
             { isVisible ? <h5>james@example.com</h5> : null }

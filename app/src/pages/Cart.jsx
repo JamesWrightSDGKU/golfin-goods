@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import "../styles/Cart.css"
+import { useContext } from "react";
 import DataContext from "../state/DataContext";
 import { Link } from "react-router-dom";
 
@@ -9,8 +9,7 @@ function Cart() {
 
     function getNumOfProds() {
         let sum = 0;
-        for(let i=0; i<cart.length; i++) {
-            const prod = cart[i];
+        for(const prod of cart) {
             sum += prod.quantity;
         }
 
@@ -19,9 +18,8 @@ function Cart() {
 
     function getTotal() {
         let total = 0;
-        for(let i=0; i<cart.length; i++) {
-            const prod = cart[i];
-            total += (prod.quantity * prod.price);
+        for (const prod of cart) {
+            total += prod.quantity * prod.price;
         }
 
         return total.toFixed(2);

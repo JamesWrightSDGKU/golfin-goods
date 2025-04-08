@@ -1,6 +1,6 @@
+import "../styles/Admin.css";
 import Discounts from "../components/Discounts";
 import ProductAdmin from "../components/ProductAdmin";
-import "../styles/Admin.css";
 
 
 function Admin() {
@@ -11,11 +11,11 @@ function Admin() {
 
             <div className="parent">
                 <section>
-                    <ProductAdmin></ProductAdmin>
+                    <ProductAdmin />
                 </section>
 
                 <section>
-                    <Discounts></Discounts>
+                    <Discounts />
                 </section>
             </div>
             

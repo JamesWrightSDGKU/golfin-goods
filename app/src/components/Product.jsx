@@ -1,5 +1,5 @@
-import QuantityPicker from "./QuantityPicker";
 import "../styles/Product.css";
+import QuantityPicker from "./QuantityPicker";
 import { useContext, useState } from "react";
 import DataContext from "../state/DataContext";
 
@@ -23,7 +23,7 @@ function Product(props) {
 
     return (
         <div className="product">
-            <img src={props.data.image} alt={props.data.title}></img>
+            <img src={props.data.image} alt={props.data.title} />
 
             <h5>{props.data.title}</h5>
 
@@ -39,11 +39,10 @@ function Product(props) {
 
 
             <div className="controls">
-                <QuantityPicker onChange={handleQuantity}></QuantityPicker>
+                <QuantityPicker onChange={handleQuantity} />
 
                 <button className="btn btn-sm btn-success" onClick={add}>
-                    <i className="fa-solid fa-cart-plus"></i>
-                    Add
+                    <i className="fa-solid fa-cart-plus" />Add
                 </button>
             </div>
         </div>
